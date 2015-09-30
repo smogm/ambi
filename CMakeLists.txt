@@ -1,0 +1,25 @@
+CMAKE_MINIMUM_REQUIRED (VERSION 2.6)
+
+PROJECT (ambi CXX)
+SET(CMAKE_VERBOSE_MAKEFILE OFF)
+
+SET(CMAKE_CXX_COMPILER "/home/wd/dev/StartHere/tufsbox/cross/bin/sh4-linux-g++")
+SET(CMAKE_CXX_FLAGS "-std=c++11 -Weffc++ -Wall -Wextra -pedantic -O2")
+
+SET (EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/bin")
+
+MESSAGE (STATUS "EXECUTABLE_OUTPUT_PATH:   " ${EXECUTABLE_OUTPUT_PATH})
+MESSAGE (STATUS "CMAKE_SOURCE_DIR:         " ${CMAKE_SOURCE_DIR})
+MESSAGE (STATUS "CMAKE_BINARY_DIR:         " ${CMAKE_BINARY_DIR})
+
+MESSAGE (STATUS "CMAKE_SYSTEM:             " ${CMAKE_SYSTEM})
+MESSAGE (STATUS "CMAKE_PROJECT_NAME:       " ${CMAKE_PROJECT_NAME})
+
+INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/")
+
+INCLUDE_DIRECTORIES("/home/wd/dev/StartHere/driver/bpamem/")
+INCLUDE_DIRECTORIES("/home/wd/dev/StartHere/tufsbox/cdkroot/usr/include/")
+
+LINK_DIRECTORIES("/home/wd/dev/StartHere/tufsbox/cdkroot/usr/lib")
+
+ADD_SUBDIRECTORY ("${CMAKE_SOURCE_DIR}/src")
